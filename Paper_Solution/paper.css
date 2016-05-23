@@ -1,0 +1,54 @@
+﻿body {
+}
+.wrapper
+{
+    width:99%;
+    margin:.4em auto;
+    border:.4em black;
+}
+.header
+{
+    width:100%;
+    background-color:#9b59b6;
+}
+.footer
+{
+    width:100%;
+    background:red;
+}
+.headerimg
+{
+    width:100%;
+}
+.topp
+{
+   
+    font-size:xx-large;
+}
+.dept
+{
+    width:100%;
+    border-color:Black;
+}
+.watermarked 
+{
+	height:25px;
+	width:210px;
+	padding:2px 0 0 2px;
+	border:1px solid #BEBEBE;
+	background-color:#F0F8FF;
+	color:gray;
+	border-radius:5px;
+}
+.borderradius
+{
+    border-radius:5px;
+}
+/*.table
+{
+    background-color:Gray;
+}*/
+.regis
+{
+    border-color :Black;
+}

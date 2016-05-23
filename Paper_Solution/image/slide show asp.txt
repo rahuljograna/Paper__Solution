@@ -1,0 +1,270 @@
+<style type="text/css">
+        .button
+        {
+            border-radius: 4px 4px 4px 4px;
+            height: 30px;
+            padding: 5px;
+            font-size: 14px;
+            background-color: #6ca21e;
+            color: #FFFFFF;
+        }
+        body
+        {
+            background-color: #32373a;
+            color: #FFFFFF;
+        }
+        #mainBody
+        {
+            background-color: #FFFFFF;
+            height: 100%;
+            color: #32373a;
+        }
+        .UCHelp
+        {
+            height: 150px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .UserControlDiv
+        {
+            width: 400px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid Gray;
+            background-color: #fdd136;
+        }
+        #AdRotator1 img
+        {
+          height:100px !important;
+          width:100px !important;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="mainBody">
+        <h1>
+            How to make an Image Slider in ASP.NET</h1>
+        <br />
+        <br />
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        <div class="UserControlDiv">
+            <asp:UpdatePanel ID="up1" runat="server">
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="btnPrevious" EventName="Click" />
+                    <asp:AsyncPostBackTrigger ControlID="btnNext" EventName="Click" />
+                    <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
+                </Triggers>
+                <ContentTemplate>
+                    <asp:Timer ID="Timer1" Interval="1000" runat="server" />
+                    <table>
+                        <tr>
+                            <td>
+                                <asp:Button ID="btnPrevious" CssClass="button" runat="server" Text="Previous Random" />
+                            </td>
+                            <td>
+                                <!-- We will use AdRotator control for creating an image slider in asp.net
+                                ASP AdRotator control has an AdvertisementFile which contains the information related to different
+                                //images that will be displayed randomly either using the timer1 or the previous next button click
+                                 -->
+                                <asp:AdRotator ID="AdRotator1" AdvertisementFile="App_Data/Ads.xml" KeywordFilter="small"
+                                    runat="server" />
+                            </td>
+                            <td>
+                                <asp:Button ID="btnNext" CssClass="button" runat="server" Text="Next Random" />
+                            </td>
+                        </tr>
+                    </table>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+Using the ASP.Net AJAX Control Toolkit SlideShow Extender Control
+1. Register the AJAX Control Toolkit Library after adding reference to your project
+ 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+ 
+2. Drag an ASP.Net AJAX ToolScriptManager on the page.
+ 
+<cc1:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+</cc1:ToolkitScriptManager>
+ 
+3. Then you need to add the AJAX SlideShow Extender control along with
+ 
+a. Image Control – This Image Control will be used by the SlideShow Extender for displaying images
+b. Three Button controls – These Buttons will be used to perform Play, Next and Previous operations.
+c. Two Label controls – These Labels will be used to display the Name and Description of the Image being displayed.
+ 
+<cc1:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+</cc1:ToolkitScriptManager>
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td>
+            <asp:Button ID="btnPrevious" runat="server" Text="<<" Font-Size="20" />
+        </td>
+        <td>
+            <asp:Image ID="Image1" runat="server" Height="300" Width="300" />
+            <cc1:SlideShowExtender ID="SlideShowExtender" runat="server" TargetControlID="Image1"
+                SlideShowServiceMethod="GetImages" ImageTitleLabelID="lblImageTitle" ImageDescriptionLabelID="lblImageDescription"
+                AutoPlay="true" PlayInterval="1000" Loop="true" PlayButtonID="btnPlay" StopButtonText="Stop"
+                PlayButtonText="Play" NextButtonID="btnNext" PreviousButtonID="btnPrevious">
+            </cc1:SlideShowExtender>
+        </td>
+        <td>
+            <asp:Button ID="btnNext" runat="server" Text=">>" Font-Size="20" />
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" align="center">
+            <asp:Button ID="btnPlay" runat="server" Text="Play" Font-Size="20" />
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" align="center">
+            <br />
+            <b>Name:</b>
+            <asp:Label ID="lblImageTitle" runat="server" Text="Label" /><br />
+            <b>Description:</b>
+            <asp:Label ID="lblImageDescription" runat="server" Text="Label" />
+        </td>
+    </tr>
+</table>
+ 
+ 
+ASP.Net AJAX Control Toolkit SlideShow Extender Properties
+Below are some important properties of the AJAX SlideShow Extender control
+TargetControlID – Here we need to set the ID of the Image control which will display the Slide Show images.
+ 
+SlideShowServiceMethod – Here you need to specify the name of the WebMethod that will be used to populate images in the ASP.Net AJAX SlideShow Extender control.
+ 
+AutoPlay (Optional, Default value false) – Using this property you can make the ASP.Net AJAX SlideShow Extender control play slide show automatically.
+ 
+Loop (Optional, Default value false) - Using this property you can make the ASP.Net AJAX SlideShow Extender control play slide show continuously without stopping in a loop.
+ 
+PlayInterval (Optional, Value in milliseconds) - Using this property you can set the time interval in milliseconds after which the ASP.Net AJAX SlideShow Extender control will show the next image.
+ 
+PlayButtonID (Optional) – If you need a Button to Play and Stop the ASP.Net AJAX SlideShow Extender control, you can add a Button and set is ID to this property. The same Button is used for Play as well as Stop Operation.
+ 
+PlayButtonText (Optional) – Here you can specify the text to be displayed for Play Button when the ASP.Net AJAX SlideShow Extender control is in STOP mode.
+ 
+StopButtonText (Optional) – Here you can specify the text to be displayed for Stop Button when the ASP.Net AJAX SlideShow Extender control is in PLAY mode.
+ 
+NextButtonID (Optional) – If you need a Button to manually make the ASP.Net AJAX SlideShow Extender control display the next image, you can add a Button and set is ID to this property.
+ 
+PreviousButtonID (Optional) – If you need a Button to manually make the ASP.Net AJAX SlideShow Extender control display the previous image, you can add a Button and set is ID to this property.
+ 
+ImageTitleLabelID (Optional) – If you need to display the Name of the Image displayed by the ASP.Net AJAX SlideShow Extender in a Label, you can add a Label and set is ID to this property.
+ 
+ImageDescriptionLabelID (Optional) – If you need to display the Description of the Image displayed by the ASP.Net AJAX SlideShow Extender in a Label, you can add a Label and set is ID to this property.
+ 
+ 
+ 
+Namespaces
+ 
+You will need to import the following namespaces.
+ 
+C#
+ 
+using System.IO;
+using AjaxControlToolkit;
+using System.Web.Services;
+using System.Web.Script.Services;
+using System.Collections.Generic;
+ 
+VB.Net
+ 
+Imports System.IO
+Imports AjaxControlToolkit
+Imports System.Web.Services
+Imports System.Web.Script.Services
+Imports System.Collections.Generic
+ 
+ 
+ASP.Net AJAX Control Toolkit SlideShow Extender Service Method Configuration
+ 
+Below is the Web Method that will act as a source of data for the ASP.Net AJAX Control Toolkit SlideShow Extender control.
+
+The return type of the Web Method is an array of Slide class which belongs to the AjaxControlToolkit namespace.
+ 
+The very first thing is to convert the path of the images folder to absolute path as we need to fetch the images from the folder Then the path is converted to Uri and stored in a variable
+ 
+Note: We are doing this as we will need it for building relative path for the images.
+ 
+The next thing we need to do is fetch the files from the Directory and then execute a loop on the fetched files. Within the loop each file is added to the array of Slide class where the following properties are set
+ 
+1. Name – This text will be displayed in the Label control who’s ID has been set for the property ImageTitleLabelID.
+ 
+2. Description – This text will be displayed in the Label control who’s ID has been set for the property ImageDescriptionLabelID.
+ 
+3. ImagePath – Here the relative path of the image is set, this path is used to download and display the images from server and hence make sure it is correctly populated otherwise images won’t be displayed.
+ 
+Note: Absolute and Relative paths are two different ways to access a file. An example of absolute path would be C:\Users\Mudassar\Projects\SlideShow\Images\Lillies.jpg while its corresponding relative path will be Images/Lillies.jpg. While displaying an image in Image control we need relative path.
+ 
+C#
+ 
+[WebMethod]
+[ScriptMethod]
+public static Slide[] GetImages()
+{
+    List<Slide> slides = new List<Slide>();
+    string path = HttpContext.Current.Server.MapPath("~/images/");
+    if (path.EndsWith("\\"))
+    {
+        path = path.Remove(path.Length - 1);
+    }
+    Uri pathUri = new Uri(path, UriKind.Absolute);
+    string[] files = Directory.GetFiles(path);
+    foreach (string file in files)
+    {
+        Uri filePathUri = new Uri(file, UriKind.Absolute);
+        slides.Add(new Slide
+        {
+            Name = Path.GetFileNameWithoutExtension(file),
+            Description = Path.GetFileNameWithoutExtension(file) + " Description.",
+            ImagePath = pathUri.MakeRelativeUri(filePathUri).ToString()
+        });
+    }
+    return slides.ToArray();
+}
+ 
+VB.Net
+ 
+<WebMethod()> _
+<ScriptMethod()> _
+Public Shared Function GetImages() As Slide()
+    Dim slides As New List(Of Slide)()
+    Dim sPath As String = HttpContext.Current.Server.MapPath("~/images/")
+    If sPath.EndsWith("\") Then
+        sPath = sPath.Remove(sPath.Length - 1)
+    End If
+    Dim pathUri As New Uri(sPath, UriKind.Absolute)
+    Dim files As String() = Directory.GetFiles(sPath)
+    For Each file As String In files
+        Dim filePathUri As New Uri(file, UriKind.Absolute)
+        slides.Add(New Slide() With { _
+          .Name = Path.GetFileNameWithoutExtension(file), _
+          .Description = Path.GetFileNameWithoutExtension(file) + " Description.", _
+          .ImagePath = pathUri.MakeRelativeUri(filePathUri).ToString() _
+        })
+    Next
+    Return slides.ToArray()
+End Function
+ 
+ASP.Net AJAX SlideShow Extender control Tutorial with Example
+ 
+ 
+ 

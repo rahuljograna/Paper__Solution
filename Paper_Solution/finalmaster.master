@@ -1,0 +1,212 @@
+﻿<%@ Master Language="VB" CodeFile="finalmaster.master.vb" Inherits="finalmaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Paper Solution</title> 
+    <link rel="Stylesheet" href="paper.css" />
+    <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0" />
+	
+		<!-- Import Bootstrap 3.3 -->
+		<link rel="stylesheet" href="gui/assets/bootstrap/css/bootstrap.min.css"/>
+		<!-- Import FontAwesome 4.2 -->
+		<link rel="stylesheet" href="gui/assets/font-awesome-4.2.0/css/font-awesome.min.css"/>
+		<!-- Import Custom Styles -->
+		<link rel="stylesheet" href="gui/assets/fancy-buttons/fancy-buttons.css"/>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .tablee
+        {
+            width: 100%;
+        }
+        .sample-container {
+			  margin: 30px auto;
+			  width: 70%;
+			}
+			.sample-container h3 {
+			  border-bottom: 1px solid #ccc;
+			}
+        .newStyle1
+        {
+            font-size: 80px;
+            font-family: "Times New Roman", Times, serif;
+        }
+        .style3
+        {
+            width: 308px;
+        }
+        .style8
+        {
+            color: #990000;
+            text-decoration: underline;
+        }
+        .style9
+        {
+            font-family: "Times New Roman", Times, serif;
+            font-size: large;
+        }
+        .style11
+        {
+            width: 1275px;
+        }
+        .style12
+        {
+            color: #6699FF;
+        }
+        .style13
+        {
+            color: #990000;
+        }
+        </style>
+</head>
+<body>
+
+    <form id="form1" runat="server" class ="wrapper">
+    <div class="wrapper">
+        <table class="tablee" >
+            <tr>
+                <td>
+                    <div class="header">
+                    
+                        <table class="tablee">
+                            <tr>
+                                <td colspan="5">
+                                    <div class="headerimg">
+                                    
+                                        <asp:Panel ID="headerimg" runat="server" BackImageUrl="~/image/11112.jpg" 
+                                            Height="290px">
+                                            <div id ="marq">
+                                                <span class="style13"><marquee direction="left" ></span>
+                                                <asp:HyperLink ID="HyperLink9" runat="server" CssClass="style13">  This is Not an Official GTU Website.....</asp:HyperLink>
+                                                <span class="style13">&nbsp;&nbsp; </span>
+                                                <asp:HyperLink ID="Hype" runat="server" CssClass="style13"> only for Diploma Students </asp:HyperLink>
+                                                </marquee>
+                                                <br />
+                                            
+                                            <div ID="logged" class="style3">
+                                                <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <asp:HyperLink ID="HyperLink6" runat="server" CssClass="style8" 
+                                                    NavigateUrl="~/login.aspx">LOGIN</asp:HyperLink>
+                                                </strong>&nbsp;&nbsp; |&nbsp;&nbsp; <strong>
+                                                <asp:HyperLink ID="hyperlink7" runat="server" CssClass="style8" 
+                                                    NavigateUrl="~/registration.aspx">REGISTER </asp:HyperLink>
+                                                &nbsp;</strong></div>
+                                            
+                                            <br />
+                                            
+                                            <br />
+                                        </asp:Panel>
+                                    
+                                    </div>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                  <div>
+                                  <a href="home.aspx" class="fancy-button medium rounded amethyst bell">
+					                  <span class="style9"><strong>Home</strong></span>
+					<span class="icon">
+						<i class="fa fa-bell"></i>
+					</span>
+				</a>
+                                  </div>
+                                   </td>
+                                <td>
+                                    <div>
+                                    <a href="SelectPaper.aspx" class="fancy-button medium rounded amethyst bell">
+					                    <span class="style9"><strong>Select Paper</strong></span>
+					<span class="icon">
+						<i class="fa fa-bell"></i>
+					</span>
+				</a>
+                                    </div>
+                                    </td>
+                                <td>
+                                    <div>
+                                    
+                                    <a href="login.aspx" class="fancy-button medium rounded amethyst bell">
+					                    <strong><span class="style9">Web Corner</span></strong>
+					<span class="icon">
+						<i class="fa fa-bell"></i>
+					</span>
+				</a>
+                                    </div>
+                                    </td>
+                                <td>
+                                    <div>
+                                    
+                                    <a href="ContactUs.aspx" class="fancy-button medium rounded amethyst bell">
+					                    <span class="style9"><strong>Contact Us</strong></span>
+					<span class="icon">
+						<i class="fa fa-bell"></i>
+					</span>
+				</a>
+                                    </div>
+                                    </td>
+                                <td>
+                                    <div>
+                                    <a href="help.aspx" class="fancy-button medium rounded amethyst bell">
+					                    <span class="style9"><strong>Help</strong></span>
+					<span class="icon">
+						<i class="fa fa-bell"></i>
+					</span>
+				</a>
+                                    </div></td>
+                            </tr>
+                        </table>
+                    
+                    </div></td>
+            </tr>
+            <tr>
+                <td>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class ="footer">
+                        <table class="nav-justified">
+                            <tr>
+                                <td>
+                                    <asp:Panel ID="Panel1" runat="server" BackImageUrl="~/image/1786103.jpg" 
+                                        Height="150px">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <asp:HyperLink ID="HyperLink8" runat="server">Follow us on....</asp:HyperLink>
+                                        &nbsp;<br />
+                                        <br />
+                                        <div ID="footWEB">
+                                            &nbsp;&nbsp;&nbsp;
+                                            <asp:ImageButton ID="ImageButton1" runat="server" Height="38px" 
+                                                ImageUrl="~/image/1 FB.png" Width="45px" />
+                                            &nbsp;&nbsp;<asp:ImageButton ID="ImageButton2" runat="server" Height="37px" 
+                                                ImageUrl="~/image/1 twitter-icon.png" Width="42px" />
+&nbsp;
+                                            <asp:ImageButton ID="ImageButton3" runat="server" Height="36px" 
+                                                ImageUrl="~/image/1.YOU.png" Width="45px" />
+                                            &nbsp;</div>
+                                        <br />
+                                        <div id="foott" align="right" class="style11">
+                                        <div id ="fo" align="left" class="style12">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Please Subscribe To Our Pages
+                                        </div>
+                                            &nbsp; &nbsp;<strong><asp:HyperLink ID="HyperLink3" runat="server" CssClass="style12">WWW.OPSL.COM   </asp:HyperLink>
+                                            <span class="style12">&nbsp;|&nbsp;&nbsp; </span>
+                                            <asp:HyperLink ID="HyperLink4" runat="server" CssClass="style12"> All Right Reserved</asp:HyperLink>
+                                            <span class="style12">&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; </span>
+                                            <asp:HyperLink ID="HyperLink5" runat="server" CssClass="style12">Terms And Condition</asp:HyperLink>
+                                            </strong><span class="style12">&nbsp;</span></div>
+                                    </asp:Panel>
+                                </td>
+                            </tr>
+                        </table>
+                    </div></td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

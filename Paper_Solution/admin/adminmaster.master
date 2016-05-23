@@ -1,0 +1,172 @@
+﻿<%@ Master Language="VB" CodeFile="adminmaster.master.vb" Inherits="admin_adminmaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Admin Panel</title>
+    <link rel="shortcut icon" href="../image/00002.jpg" />
+    <link rel="Stylesheet" href="../paper.css" />
+    <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0" />
+	
+		<!-- Import Bootstrap 3.3 -->
+		<link rel="stylesheet" href="../gui/assets/bootstrap/css/bootstrap.min.css" />
+		<!-- Import FontAwesome 4.2 -->
+		<link rel="stylesheet" href="../gui/assets/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<!-- Import Custom Styles -->
+		<link rel="stylesheet" href="../gui/assets/fancy-buttons/fancy-buttons.css" />
+		<style type="text/css">
+			/* Styles for example - not included in main css files */
+			.sample-container {
+			  margin: 30px auto;
+			  width: 70%;
+			}
+			.sample-container h3 {
+			  border-bottom: 1px solid #ccc;
+			}
+		    .style1
+            {
+                height: 23px;
+            }
+		    .style3
+            {
+                width: 105px;
+            }
+		</style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="wrapper">
+   
+        <table class="headerimg">
+            <tr>
+                <td>
+                    <div class="header">
+                    
+                        <table class="headerimg">
+                            <tr>
+                                <td colspan="7">
+                                    <asp:Panel ID="Panel1" runat="server" width="100%" 
+                                        BackImageUrl="~/image/0141.jpg" Height="264px">
+                                        <br />
+                                        <div id ="adHead" class="style3">
+                                            <strong>
+                                            &nbsp;&nbsp;
+                                            <br />
+                                            &nbsp;
+                                            </strong>
+                                        </div>
+                                    </asp:Panel>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="style1">
+                                   <div>
+                                    <a href="addpaper/alldeparment.aspx" 
+                                           class="fancy-button medium half-left-rounded midnight zoom shake infinite">
+                                Add Paper
+					<span class="icon">
+						<i class="fa fa-bomb"></i>
+					</span>
+				</a>
+                                   </div>
+                                   </td>
+                                <td class="style1">
+                                    <div>
+                                     <a href="addclg.aspx" 
+                                            class="fancy-button medium half-left-rounded midnight zoom shake infinite">
+                                Add Colleges
+					<span class="icon">
+						<i class="fa fa-bomb"></i>
+					</span>
+				</a>
+                                    </div>
+                                    </td>
+                                    <td class="style1">
+                                    <div>
+                                     <a href="Adddept.aspx" 
+                                            class="fancy-button medium half-left-rounded midnight zoom shake infinite">
+                                Add Department
+					<span class="icon">
+						<i class="fa fa-bomb"></i>
+					</span>
+				</a>
+                                    </div>
+                                    </td>
+                                    <td class="style1">
+                                    <div>
+                                     <a href="viewuser.aspx" 
+                                            class="fancy-button medium half-left-rounded midnight zoom shake infinite">
+                                View User
+					<span class="icon">
+						<i class="fa fa-bomb"></i>
+					</span>
+				</a>
+                                    </div>
+                                    </td>
+                                    <td class="style1">
+                                    <div>
+                                     <a href="secque.aspx" 
+                                            class="fancy-button medium half-left-rounded midnight zoom shake infinite">
+                                Security Question
+					<span class="icon">
+						<i class="fa fa-bomb"></i>
+					</span>
+				</a>
+                                    </div>
+                                    </td>
+                                    <td>
+                                    <div>
+                                    <a href="viewcontact.aspx" 
+                                            class="fancy-button medium half-left-rounded midnight zoom shake infinite">
+                                View Full Site
+					<span class="icon">
+						<i class="fa fa-bomb"></i>
+					</span>
+				</a>
+                                    </div>
+                                    </td>
+                                    <td>
+                                    <div>
+                                    
+                                        <asp:LinkButton ID="LinkButton1" runat="server" class="fancy-button medium half-left-rounded midnight zoom shake infinite">Logout
+                                        <span class="icon">
+						<i class="fa fa-bomb"></i>
+					</span>
+                    </asp:LinkButton>
+                                    
+                                    </div>
+                                    </td>
+                            </tr>
+                           
+                        </table>
+                    
+                    </div></td>
+            </tr>
+            <tr>
+                <td class="style1">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <div class="footer">
+                
+                    <asp:Panel ID="Panel2" runat="server" Width="100%" 
+                        BackImageUrl="~/image/1786103.jpg" Height="206px">
+                    </asp:Panel>
+                
+                </div>
+                </td>
+            </tr>
+        </table>
+   
+    </div>
+    </form>
+</body>
+</html>
